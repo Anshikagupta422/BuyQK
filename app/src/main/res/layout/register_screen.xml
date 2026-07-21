@@ -27,7 +27,7 @@
             <ImageView
                 android:layout_width="110dp"
                 android:layout_height="110dp"
-                android:src="@drawable/logo2"
+                android:src="@drawable/logotrans"
                 android:scaleType="fitCenter"/>
 
             <Space
@@ -163,7 +163,7 @@
 
             <Button
                 android:id="@+id/btnCreate"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:background="@drawable/bg_login"
                 android:text="Create Account"

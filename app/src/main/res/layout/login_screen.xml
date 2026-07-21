@@ -29,7 +29,7 @@
                 android:id="@+id/imgLogo"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:src="@drawable/logo2"
+                android:src="@drawable/logotrans"
                 android:scaleType="fitCenter"/>
 
             <Space
@@ -133,8 +133,8 @@
 
             <Button
                 android:id="@+id/btnLogin"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
                 android:text="Login"
                 android:textAllCaps="false"
                 android:textSize="22sp"
@@ -165,7 +165,7 @@
                     android:text="OR"
                     android:textColor="#9AA6BC"
                     android:textSize="16sp"
-                    padding="12dp"/>
+                    android:padding="12dp"/>
 
                 <View
                     android:layout_width="0dp"
@@ -184,32 +184,47 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="25dp">
 
+                <!-- Google -->
                 <ImageButton
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/button_selected"
-                    android:src="@drawable/search"/>
+                    android:id="@+id/googleLogin"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/search"
+                    android:contentDescription="Google Login" />
 
+                <!-- Facebook -->
                 <ImageButton
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_margin="8dp"
-                    android:tint="#0D1B3D"
-                    android:background="@drawable/button_selected"
-                    android:src="@drawable/facebook"/>
+                    android:id="@+id/facebookLogin"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/facebook"
+                    android:contentDescription="Facebook Login" />
 
+                <!-- Apple -->
                 <ImageButton
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/button_selected"
-                    android:src="@drawable/apple_logo"/>
+                    android:id="@+id/appleLogin"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/apple_logo"
+                    android:contentDescription="Apple Login" />
 
             </LinearLayout>
-
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="30dp"/>

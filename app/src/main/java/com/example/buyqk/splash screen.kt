@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 
 class SplashActivity : AppCompatActivity() {
 
+    private var hasNavigated = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash_screen)
@@ -17,20 +19,32 @@ class SplashActivity : AppCompatActivity() {
         val btnRegister = findViewById<Button>(R.id.btnRegister)
 
         btnLogin.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+            navigateToLogin()
         }
 
         btnRegister.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            navigateToRegister()
         }
 
         // Auto-navigate to Login after 3 seconds if no button is clicked
         Handler(Looper.getMainLooper()).postDelayed({
-            // Check if we are still in SplashActivity before auto-transitioning
-            if (!isFinishing) {
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
+            if (!isFinishing && !hasNavigated) {
+                navigateToLogin()
             }
         }, 3000)
+    }
+
+    private fun navigateToLogin() {
+        if (hasNavigated) return
+        hasNavigated = true
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
+    }
+
+    private fun navigateToRegister() {
+        if (hasNavigated) return
+        hasNavigated = true
+        startActivity(Intent(this, RegisterActivity::class.java))
+        finish()
     }
 }
