@@ -16,15 +16,11 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.splash_screen)
 
         val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val btnRegister = findViewById<Button>(R.id.btnRegister)
 
         btnLogin.setOnClickListener {
             navigateToLogin()
         }
-
-        btnRegister.setOnClickListener {
-            navigateToRegister()
-        }
+        
 
         // Auto-navigate to Login after 3 seconds if no button is clicked
         Handler(Looper.getMainLooper()).postDelayed({
